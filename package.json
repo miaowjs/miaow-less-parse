@@ -1,0 +1,31 @@
+{
+  "name": "miaow-minify-png",
+  "description": "Miaow的Less编译工具",
+  "version": "0.0.1",
+  "repository": "miaowjs/miaow-less-parse",
+  "author": {
+    "name": "anhulife",
+    "email": "anhulife@gmail.com"
+  },
+  "keywords": [
+    "miaow",
+    "less"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "async": "~0.9.0",
+    "less": "~2.5.1",
+    "lodash": "~3.8.0",
+    "miaow-util": "~0.2.1"
+  },
+  "devDependencies": {
+    "miaow": "^1.7.2",
+    "mocha": "^2.2.4"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha"
+  },
+  "engines": {
+    "node": ">=0.10"
+  }
+}
