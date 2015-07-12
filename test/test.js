@@ -44,4 +44,9 @@ describe('miaow-less-parse', function () {
   it('编译', function () {
     assert.equal(log.modules['foo.less'].hash, 'bb1aa354e25e362847c02529365c2749');
   });
+
+  it('添加依赖信息', function () {
+    assert.equal(log.modules['foo.less'].dependencies[0], 'bar.less');
+    assert.equal(log.modules['foo.less'].dependencies[1], 'bower_components/foz/main.less');
+  });
 });
