@@ -47,6 +47,6 @@ describe('miaow-less-parse', function () {
 
   it('添加依赖信息', function () {
     assert.equal(log.modules['foo.less'].dependencies[0], 'bar.less');
-    assert.equal(log.modules['foo.less'].dependencies[1], 'bower_components/foz/main.less');
+    assert.equal(log.modules['foo.less'].dependencies[1], 'bower_components/foz/main.less'.split('/').join(path.sep));
   });
 });
