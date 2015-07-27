@@ -42,11 +42,11 @@ describe('miaow-less-parse', function () {
   });
 
   it('编译', function () {
-    assert.equal(log.modules['foo.less'].hash, 'bb1aa354e25e362847c02529365c2749');
+    assert.equal(log.modules['foo.less'].hash, 'cc968099ebbf72837930b2e14a90dc3a');
   });
 
   it('添加依赖信息', function () {
     assert.equal(log.modules['foo.less'].dependencies[0], 'bar.less');
-    assert.equal(log.modules['foo.less'].dependencies[1], 'bower_components/foz/main.less'.split('/').join(path.sep));
+    assert.equal(log.modules['foo.less'].dependencies[1], 'bower_components/foz/main.less');
   });
 });
