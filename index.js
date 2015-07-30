@@ -3,6 +3,7 @@ var mutil = require('miaow-util');
 var path = require('path');
 
 var ImportResolverPlugin = require('./lib/importResolverPlugin');
+var UrlResolverPlugin = require('./lib/urlResolverPlugin');
 var pkg = require('./package.json');
 
 module.exports = mutil.plugin(pkg.name, pkg.version, function (option, cb) {
@@ -11,9 +12,8 @@ module.exports = mutil.plugin(pkg.name, pkg.version, function (option, cb) {
     this.contents.toString(),
     {
       paths: [path.dirname(module.srcAbsPath)],
-      plugins: [new ImportResolverPlugin({
-        module: module
-      })]
+      relativeUrls: false,
+      plugins: [new ImportResolverPlugin(module), new UrlResolverPlugin(module)]
     },
     function (err, output) {
       if (err) {
