@@ -42,7 +42,7 @@ describe('miaow-less-parse', function () {
   });
 
   it('编译', function () {
-    assert.equal(log.modules['foo.less'].hash, '4e6862c3c2f503068d2f800298a35cb3');
+    assert.equal(log.modules['foo.less'].hash, 'a925e829d0943b56c6025a703f9dba15');
   });
 
   it('添加依赖信息', function () {
