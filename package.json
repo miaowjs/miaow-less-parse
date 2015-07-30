@@ -1,7 +1,7 @@
 {
   "name": "miaow-less-parse",
   "description": "Miaow的Less编译工具",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "miaowjs/miaow-less-parse",
   "author": {
     "name": "anhulife",
@@ -18,7 +18,7 @@
     "q": "~1.4.1"
   },
   "devDependencies": {
-    "miaow": "^3.0.0",
+    "miaow": "^3.1.0",
     "mocha": "^2.2.4"
   },
   "scripts": {
