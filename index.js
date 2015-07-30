@@ -11,8 +11,9 @@ module.exports = mutil.plugin(pkg.name, pkg.version, function (option, cb) {
   less.render(
     this.contents.toString(),
     {
+      filename: this.srcAbsPath,
       paths: [path.dirname(module.srcAbsPath)],
-      relativeUrls: false,
+      relativeUrls: true,
       plugins: [new ImportResolverPlugin(module), new UrlResolverPlugin(module)]
     },
     function (err, output) {
