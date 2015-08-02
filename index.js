@@ -30,7 +30,7 @@ module.exports = mutil.plugin(pkg.name, pkg.version, function (option, cb) {
           module.contents = new Buffer(result.css);
           cb();
         } catch (err) {
-          cb(less.formatError(err));
+          cb(new Error(less.formatError(err)));
         }
       });
     }
