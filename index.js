@@ -12,7 +12,7 @@ module.exports = mutil.plugin(pkg.name, pkg.version, function (option, cb) {
     {
       filename: this.srcAbsPath,
       relativeUrls: true,
-      plugins: [new ImportResolverPlugin(module)]
+      plugins: [new ImportResolverPlugin(module, cb)]
     },
     function (err, root, imports, options) {
       if (err) {
@@ -30,7 +30,7 @@ module.exports = mutil.plugin(pkg.name, pkg.version, function (option, cb) {
           module.contents = new Buffer(result.css);
           cb();
         } catch (err) {
-          cb(new Error(less.formatError(err)));
+          cb(err);
         }
       });
     }
