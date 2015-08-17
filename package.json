@@ -1,7 +1,7 @@
 {
   "name": "miaow-less-parse",
   "description": "Miaow的Less编译工具",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "repository": "miaowjs/miaow-less-parse",
   "author": {
     "name": "anhulife",
@@ -16,12 +16,12 @@
     "async": "~0.9.0",
     "is-url-superb": "~2.0.0",
     "less": "~2.5.1",
-    "miaow-util": "~0.5.0",
+    "miaow-util": "~0.6.1",
     "path-is-absolute": "~1.0.0",
     "q": "~1.4.1"
   },
   "devDependencies": {
-    "miaow": "^3.2.0",
+    "miaow": "^4.0.0",
     "mocha": "^2.2.4"
   },
   "scripts": {
