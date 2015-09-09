@@ -1,8 +1,13 @@
 @import "./baz.css";
 
 @color: red;
+@v: foo;
 
 .bar {
   color: @color;
-  background: url(./foo.png);
+  background: url('./@{v}.png#bar');
+
+  &::before {
+    background: url(foz/foz.png);
+  }
 }

@@ -5,7 +5,7 @@ var path = require('path');
 
 var parse = require('../index');
 describe('miaow-less-parse', function () {
-  this.timeout(10000e3);
+  this.timeout(10e3);
 
   var log;
 
@@ -16,6 +16,7 @@ describe('miaow-less-parse', function () {
     miaow.compile({
       cwd: cwd,
       output: output,
+      domain: '//foo.com/',
       module: {
         tasks: [
           {
@@ -42,7 +43,7 @@ describe('miaow-less-parse', function () {
   });
 
   it('编译', function () {
-    assert.equal(log.modules['foo/foo.less'].hash, '5d8e886faabf34df4a8d350cb7524208');
+    assert.equal(log.modules['foo/foo.less'].hash, '4b48a5a40d37d41e682aa4653234c9f2');
   });
 
   it('添加依赖信息', function () {

@@ -3,5 +3,9 @@
 
 .foo {
   color: grey;
-  background: url('../foo.png');
+  background: url(../foo.png#foo);
+
+  &::before {
+    background: url(http://foo.com/bar.png);
+  }
 }

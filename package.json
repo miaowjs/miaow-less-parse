@@ -1,7 +1,7 @@
 {
   "name": "miaow-less-parse",
   "description": "Miaow的Less编译工具",
-  "version": "1.7.4",
+  "version": "1.8.0",
   "repository": "miaowjs/miaow-less-parse",
   "author": {
     "name": "anhulife",
@@ -18,6 +18,8 @@
     "less": "~2.5.1",
     "miaow-util": "~0.6.1",
     "path-is-absolute": "~1.0.0",
+    "postcss": "~4.1.11",
+    "promise": "~7.0.4",
     "q": "~1.4.1"
   },
   "devDependencies": {
