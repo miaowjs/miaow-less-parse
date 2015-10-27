@@ -2,6 +2,8 @@
 
 > Miaow的Less编译工具
 
+## 效果示例
+
 ```less
 /* foo.less */
 @import "./bar";
@@ -36,27 +38,5 @@
 }
 .foo {
   color: grey;
-}
-```
-
-## 使用说明
-
-### 安装
-
-```
-npm install miaow-less-parse --save-dev
-```
-
-### 在项目的 miaow.config.js 中添加模块的 tasks 设置
-
-```javascript
-//miaow.config.js
-module: {
-  tasks: [
-    {
-      test: /\.less$/,
-      plugins: ['miaow-less-parse']
-    }
-  ]
 }
 ```

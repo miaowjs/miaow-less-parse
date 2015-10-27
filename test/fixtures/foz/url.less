@@ -1,15 +1,12 @@
-@import "./baz.css";
-
 @color: red;
-@v: foo;
-
-.bar {
+@name: 'foo';
+.foz {
   color: @color;
-  background: transparent url('./@{v}.png#bar') no-repeat;
+  background: transparent url('../@{name}.png#bar') no-repeat;
 
   &::before {
     background: url();
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAAD///+l2Z/dAAAAM0lEQVR4nGP4/5/h/1+G/58ZDrAz3D/McH8yw83NDDeNGe4Ug9C9zwz3gVLMDA/A6P9/AFGGFyjOXZtQAAAAAElFTkSuQmCC');
-    background: url(foz/foz.png) url('./@{v}.png#bar');
+    background: url(../foo.png) url('../@{name}.png#bar');
   }
 }

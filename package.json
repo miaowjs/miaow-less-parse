@@ -1,7 +1,7 @@
 {
   "name": "miaow-less-parse",
   "description": "Miaow的Less编译工具",
-  "version": "1.8.3",
+  "version": "2.0.0",
   "repository": "miaowjs/miaow-less-parse",
   "author": {
     "name": "anhulife",
@@ -13,23 +13,24 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "async": "~0.9.0",
+    "async": "~1.4.2",
     "is-url-superb": "~2.0.0",
-    "less": "~2.5.1",
+    "less": "~2.5.3",
     "lodash.find": "~3.2.1",
-    "miaow-util": "~0.6.1",
     "path-is-absolute": "~1.0.0",
-    "postcss": "~4.1.11",
+    "postcss": "~5.0.10",
     "promise": "~7.0.4",
     "q": "~1.4.1"
   },
   "devDependencies": {
-    "miaow": "^4.0.0",
-    "mocha": "^2.2.4"
+    "miaow": "^5.0.0",
+    "mocha": "^2.3.3",
+    "eslint": "^1.7.2",
+    "eslint-config-airbnb": "^0.1.0"
   },
   "scripts": {
     "postpublish": "cnpm sync miaow-less-parse",
-    "test": "node ./node_modules/mocha/bin/mocha"
+    "test": "mocha"
   },
   "engines": {
     "node": ">=0.10"

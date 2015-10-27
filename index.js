@@ -1,32 +1,37 @@
 var less = require('less');
-var mutil = require('miaow-util');
+var path = require('path');
 
 var ImportResolverPlugin = require('./lib/importResolverPlugin');
 var prepareUrl = require('./lib/prepareUrl');
 var generateUrl = require('./lib/generateUrl');
 var pkg = require('./package.json');
 
-module.exports = mutil.plugin(pkg.name, pkg.version, function (option, cb) {
-  var module = this;
+module.exports = function(options, callback) {
+  var context = this;
+
   less.render(
-    this.contents.toString(),
+    context.contents.toString(),
     {
-      filename: this.srcAbsPath,
+      filename: path.resolve(context.context, context.src),
       relativeUrls: true,
-      plugins: [new ImportResolverPlugin(module, cb), prepareUrl]
+      plugins: [new ImportResolverPlugin(context, callback), prepareUrl]
     },
-    function (err, result) {
+    function(err, result) {
       if (err) {
-        return cb(err);
+        return callback(err);
       }
 
-      generateUrl(result.css, module)
-        .then(function (content) {
-          module.contents = new Buffer(content);
-          return cb();
-        }, function (err) {
-          return cb(err);
-        });
+      generateUrl(result.css, context)
+        .then(function(content) {
+          context.contents = new Buffer(content);
+          return callback();
+        },
+
+        callback);
     }
   );
-});
+};
+
+module.exports.toString = function() {
+  return [pkg.name, pkg.version].join('@');
+};

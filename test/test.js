@@ -1,53 +1,40 @@
+var find = require('lodash.find');
 var assert = require('assert');
 var fs = require('fs');
 var miaow = require('miaow');
 var path = require('path');
 
 var parse = require('../index');
-describe('miaow-less-parse', function () {
+describe('miaow-less-parse', function() {
   this.timeout(10e3);
 
   var log;
 
-  var cwd = path.resolve(__dirname, './fixtures');
-  var output = path.resolve(__dirname, './output');
-
-  function doCompile(cb) {
-    miaow.compile({
-      cwd: cwd,
-      output: output,
-      domain: '//foo.com/',
-      module: {
-        tasks: [
-          {
-            test: /\.less$/,
-            plugins: [parse]
-          }
-        ]
-      }
-    }, function (err) {
+  function doCompile(done) {
+    miaow({
+      context: path.resolve(__dirname, './fixtures')
+    }, function(err) {
       if (err) {
-        console.error(err.toString());
-        return cb(err);
+        console.error(err.toString(), err.stack);
+        process.exit(1);
       }
 
-      log = JSON.parse(fs.readFileSync(path.join(output, 'miaow.log.json')));
-      cb();
+      log = JSON.parse(fs.readFileSync(path.resolve(__dirname, './output/miaow.log.json')));
+      done();
     });
   }
 
   before(doCompile);
 
-  it('接口是否存在', function () {
+  it('接口是否存在', function() {
     assert(!!parse);
   });
 
-  it('编译', function () {
-    assert.equal(log.modules['foo/foo.less'].hash, 'd7e1471cda8e5b59d765d4119f22c8ec');
+  it('导入', function() {
+    assert.equal(find(log.modules, {src: 'import.less'}).destHash, 'c6a3da5195aa54ab38162649d5ee3b94');
   });
 
-  it('添加依赖信息', function () {
-    assert.equal(log.modules['foo/foo.less'].dependList[0], 'bar.less');
-    assert.equal(log.modules['foo/foo.less'].dependList[1], 'bower_components/foz/main.less');
+  it('处理URL', function() {
+    assert.equal(find(log.modules, {src: 'foz/url.less'}).destHash, 'dc8aac6e65fe6779f66a1ecdc678958f');
   });
 });
