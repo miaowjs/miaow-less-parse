@@ -14,7 +14,7 @@ module.exports = function(options, callback) {
     {
       filename: path.resolve(context.context, context.src),
       relativeUrls: true,
-      plugins: [new ImportResolverPlugin(context, callback), prepareUrl]
+      plugins: [new ImportResolverPlugin(context), prepareUrl]
     },
     function(err, result) {
       if (err) {

@@ -1,7 +1,7 @@
 {
   "name": "miaow-less-parse",
   "description": "Miaow的Less编译工具",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "repository": "miaowjs/miaow-less-parse",
   "author": {
     "name": "anhulife",
