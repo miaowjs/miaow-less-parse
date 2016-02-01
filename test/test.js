@@ -31,10 +31,10 @@ describe('miaow-less-parse', function() {
   });
 
   it('导入', function() {
-    assert.equal(find(log.modules, {src: 'import.less'}).destHash, 'c6a3da5195aa54ab38162649d5ee3b94');
+    assert.equal(find(log.modules, {src: 'import.less'}).destHash, 'f3f34f77481a3200bbc416f430550884');
   });
 
   it('处理URL', function() {
-    assert.equal(find(log.modules, {src: 'foz/url.less'}).destHash, 'dc8aac6e65fe6779f66a1ecdc678958f');
+    assert.equal(find(log.modules, {src: 'foz/url.less'}).destHash, 'b869e4286b9e491874d914edb03ea022');
   });
 });

@@ -17,6 +17,7 @@
     "is-url-superb": "~2.0.0",
     "less": "~2.5.3",
     "lodash.find": "~3.2.1",
+    "miaow-util": "^1.0.0",
     "path-is-absolute": "~1.0.0",
     "postcss": "~4.1.16",
     "promise": "~7.0.4",
