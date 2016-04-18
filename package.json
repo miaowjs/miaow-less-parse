@@ -15,7 +15,7 @@
   "dependencies": {
     "async": "~1.4.2",
     "is-url-superb": "~2.0.0",
-    "less": "~2.5.3",
+    "less": "~2.6.1",
     "lodash.find": "~3.2.1",
     "miaow-util": "^1.0.0",
     "path-is-absolute": "~1.0.0",
