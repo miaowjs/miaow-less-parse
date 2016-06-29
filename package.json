@@ -13,15 +13,15 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "async": "~1.4.2",
-    "is-url-superb": "~2.0.0",
-    "less": "~2.6.1",
-    "lodash.find": "~3.2.1",
-    "miaow-util": "^1.0.0",
-    "path-is-absolute": "~1.0.0",
-    "postcss": "~4.1.16",
-    "promise": "~7.0.4",
-    "q": "~1.4.1"
+    "async": "1.4.2",
+    "is-url-superb": "2.0.0",
+    "less": "2.6.1",
+    "lodash.find": "3.2.1",
+    "miaow-util": "1.1.0",
+    "path-is-absolute": "1.0.0",
+    "postcss": "4.1.16",
+    "promise": "7.0.4",
+    "q": "1.4.1"
   },
   "devDependencies": {
     "miaow": "^5.0.0",
